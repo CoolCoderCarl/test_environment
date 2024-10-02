@@ -1,22 +1,32 @@
 resource "aws_iam_role" "web_ag_role" {
+  #name = "ProjectWebAG"
   name = "web_ag_role"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
-    Statement = [{
-      Action = "sts:AssumeRole"
-      Principal = {
-        #Service = "ec2.amazonaws.com"
-        Service = "autoscaling.amazonaws.com"
+    Statement = [
+      {
+        Sid    = ""
+        Effect = "Allow"
+        Action = "sts:AssumeRole"
+        Principal = {
+          Service = "ec2.amazonaws.com"
+        }
+      },
+      {
+        Sid    = ""
+        Effect = "Allow"
+        Action = "sts:AssumeRole"
+        Principal = {
+          Service = "autoscaling.amazonaws.com"
+        }
       }
-      Effect = "Allow"
-      Sid    = ""
-    }]
+    ]
   })
 }
 
 resource "aws_iam_policy" "web_ag_s3_policy" {
-  name        = "web_ag_s3_policy"
+  name        = "AccessAGUploadS3"
   description = "A policy to allow S3 access"
 
   policy = jsonencode({
@@ -27,8 +37,9 @@ resource "aws_iam_policy" "web_ag_s3_policy" {
         "s3:PutObject",
         "s3:PutObjectAcl",
         "s3:GetObject"
+        #"s3:*"
       ]
-      Resource = "${aws_s3_bucket.res_bucket.arn}/*" # Allow access to all objects in the bucket
+      Resource = "${aws_s3_bucket.res_bucket.arn}/*"
     }]
   })
 }

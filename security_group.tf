@@ -19,12 +19,12 @@ resource "aws_security_group" "web_lb_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   # SSH access from anywhere
-  #  ingress {
-  #    from_port   = 22
-  #    to_port     = 22
-  #    protocol    = "tcp"
-  #    cidr_blocks = ["0.0.0.0/0"]
-  #  }
+  #ingress {
+  #  from_port   = 22
+  #  to_port     = 22
+  #  protocol    = "tcp"
+  #  cidr_blocks = ["0.0.0.0/0"]
+  #}
   # Outbound Rules
   # Internet access to anywhere
   egress {
@@ -64,12 +64,12 @@ resource "aws_security_group" "web_ag_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   # SSH access from anywhere
-  #  ingress {
-  #    from_port   = 22
-  #    to_port     = 22
-  #    protocol    = "tcp"
-  #    cidr_blocks = ["0.0.0.0/0"]
-  #  }
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   # Outbound Rules
   # Internet access to anywhere
   egress {

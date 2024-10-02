@@ -17,6 +17,7 @@ resource "aws_launch_configuration" "web_launch_configuration" {
   lifecycle {
     create_before_destroy = true
   }
+  user_data = file("web_script.sh")
 }
 
 
