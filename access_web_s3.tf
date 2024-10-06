@@ -39,7 +39,7 @@ resource "aws_iam_policy" "web_ag_s3_policy" {
         "s3:GetObject"
         #"s3:*"
       ]
-      Resource = "${aws_s3_bucket.res_bucket.arn}/*"
+      Resource = "${aws_s3_bucket.bucket_patient_result_docs.arn}/*"
     }]
   })
 }

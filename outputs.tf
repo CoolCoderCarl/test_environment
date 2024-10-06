@@ -13,3 +13,7 @@ output "web_alb" {
   description = "Web Application Load Balancer URL"
 
 }
+
+#output "layer_arn" {
+#  value = aws_lambda_layer_version.parser_lambda_layer.arn
+#}

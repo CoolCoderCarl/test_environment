@@ -39,7 +39,7 @@ variable "azs" {
 variable "bucket_name" {
   description = "Bucket to store patients results"
   type        = string
-  default     = "bucket-results-doc-1"
+  default     = "bucket-patients-result-docs-1"
 }
 
 

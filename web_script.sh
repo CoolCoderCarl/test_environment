@@ -19,7 +19,7 @@ from flask import *
 import boto3
 from botocore.exceptions import NoCredentialsError
 
-bucket_name = 'bucket-results-doc-1'
+bucket_name = 'bucket-patients-result-docs-1'
 path_to_htmls = '/var/www/web/templates'
 
 def upload_to_s3(file_name, bucket, object_name=None):
