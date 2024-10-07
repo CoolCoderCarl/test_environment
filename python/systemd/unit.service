@@ -1,0 +1,14 @@
+[Unit]
+Description=Web Python App
+After=network.target
+
+[Service]
+#User=yourusername
+#Group=yourgroup
+WorkingDirectory=/opt/local/bin
+ExecStart=/bin/python3.7 /opt/local/bin/main.py
+Restart=always
+Environment=FLASK_ENV=dev
+
+[Install]
+WantedBy=multi-user.target

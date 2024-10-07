@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# install dependecies
 pip3.7 install boto3
 pip3.7 install flask
 
@@ -76,7 +77,7 @@ echo "
 </html>
 " >> /var/www/web/templates/index.html
 
-# Acknowledgement.html
+# acknowledgement.html
 echo "
 <html> 
 <head> 
@@ -89,7 +90,7 @@ echo "
 </html>
 " >> /var/www/web/templates/acknowledgement.html
 
-
+# systemd unit 
 echo "
 [Unit]
 Description=Web Python App
