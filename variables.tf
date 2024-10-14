@@ -48,3 +48,19 @@ variable "web_ami" {
   type        = string
   default     = "ami-0e54eba7c51c234f6"
 }
+
+# Aurora Database (PostgreSQL)
+variable "aurora_admin_username" {
+  description = "Aurora DB PostgreSQL - Username"
+  type        = string
+  sensitive   = true
+
+}
+
+variable "aurora_admin_password" {
+  description = "Aurora DB PostgreSQL - Password"
+  type        = string
+  sensitive   = true
+
+}
+

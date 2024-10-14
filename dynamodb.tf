@@ -1,4 +1,4 @@
-resource "aws_dynamodb_table" "prepared-dynamodb" {
+resource "aws_dynamodb_table" "prepared_dynamodb" {
   name           = "Prepared"
   billing_mode   = "PROVISIONED"
   read_capacity  = 20
@@ -47,4 +47,11 @@ resource "aws_dynamodb_table" "prepared-dynamodb" {
     Environment = "Dev"
   }
 }
+
+
+#resource "aws_lambda_event_source_mapping" "dynamodb_event" {
+#  event_source_arn  = aws_dynamodb_table.prepared_dynamodb.stream_arn
+#  function_name     = aws_lambda_function.cogito_lambda_function.arn
+#  starting_position = "LATEST"
+#}
 
