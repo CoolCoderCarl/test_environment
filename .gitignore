@@ -35,3 +35,8 @@ terraform.rc
 
 # Lock file
 .terraform.lock.hcl
+
+# Plan Files
+*_plan_*
+*_plan_*.json
+
