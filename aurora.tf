@@ -1,10 +1,8 @@
 resource "aws_rds_cluster" "aurora_psql_cluster" {
-  cluster_identifier = "aurora-psql-cluster"
-  engine             = "aurora-postgresql"
-  #master_username        = "aurora_admin"
-  master_username = var.aurora_username
-  #master_password        = "aurora_admin" # Use a secure method for passwords
-  master_password        = var.aurora_password
+  cluster_identifier     = "aurora-psql-cluster"
+  engine                 = "aurora-postgresql"
+  master_username        = var.aurora_admin_username
+  master_password        = var.aurora_admin_password
   db_subnet_group_name   = aws_db_subnet_group.aurora_private_subnets.name
   vpc_security_group_ids = [aws_security_group.aurora_sg.id]
 
