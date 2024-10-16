@@ -54,13 +54,13 @@ variable "aurora_admin_username" {
   description = "Aurora DB PostgreSQL - Username"
   type        = string
   sensitive   = true
-  default     = ""
+  default     = "admin_user"
 }
 
 variable "aurora_admin_password" {
   description = "Aurora DB PostgreSQL - Password"
   type        = string
   sensitive   = true
-  default     = ""
+  default     = "admin_pass"
 }
 
